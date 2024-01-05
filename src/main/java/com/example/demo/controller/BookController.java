@@ -33,4 +33,12 @@ public class BookController {
     public ResponseEntity<Object> getAll(){
         return ResponseEntity.status(HttpStatus.OK).body(bookRepository.findAll());
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<Book> updateBook(@RequestBody Book book,
+                           @PathVariable Integer id){
+
+        return ResponseEntity.status(HttpStatus.OK).body(bookService.updateBookById(book, id));
+
+
+    }
 }

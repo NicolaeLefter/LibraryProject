@@ -28,5 +28,22 @@ public class Book {
     @Column
     private Integer stocQuantity;
 
+    public Book(Integer id){
+        this.id = id;
+
+    }
+
+    public Book(String title, String author, Double price){
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+    public Book(Integer id, String title, String author, Double price){
+        this.id = id;
+        this.title = title;
+        this.author = author;
+        this.price = price;
+    }
+
 
 }

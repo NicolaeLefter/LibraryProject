@@ -33,4 +33,10 @@ public class UserController {
     public ResponseEntity<List<User>> getAll(){
         return ResponseEntity.status(HttpStatus.OK).body(userRepository.findAll());
     }
+    @PutMapping("/update/{id}")
+    public ResponseEntity<User> updateUserById(@RequestBody User user,
+                                               @PathVariable Integer id){
+       
+       return ResponseEntity.status(HttpStatus.OK).body(userService.updateUserById(user,id));
+    }
 }
